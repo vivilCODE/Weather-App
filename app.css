@@ -1,0 +1,215 @@
+/* GLOBAL */
+
+body {
+    font-family: 'pixeledregular', Courier, monospace;
+    background-color: #1A1A1A;
+    box-sizing: content-box;
+    margin: 0 10px;
+}
+
+#wrapper {
+    width: 880px;
+    margin: auto;
+    padding: 5rem 0;
+}
+
+@media (max-width:900px) {
+    #wrapper {
+        width: 100%;
+    }
+}
+
+
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #00FF41;
+    width: 60%;
+    font-size: 2em;
+    line-height:1.7;
+}
+
+form {
+    width: 30%;
+    position: relative;
+}
+
+#formTip {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    color: white;
+    font-size:.7em;
+}
+
+input {
+    font-family: 'share_tech_monoregular', Courier, monospace;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem 2rem;
+    background-image: url(assets/searchicon.png);
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: 7.5px center;
+}
+
+
+
+/* MAIN */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+}
+
+
+#leftWrapper {
+    width: 65%;
+}
+
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#weatherIcon {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#top p {
+    flex: 2;
+    padding: 2em 0;
+    font-size: 1.5em;
+    color: white;
+    height: 150px;
+    font-family: 'share_tech_monoregular', Courier, monospace;
+}
+
+
+
+/* BOTTOM */
+
+
+#bottom {
+    display: flex;
+    font-size: 1.2rem;
+}
+
+#humidityContainer, 
+#windContainer,
+#feelsLike {
+    font-size:.7em;
+}
+
+#humidityContainer {
+    background-image: url(assets/humiditybg.png);
+    background-size: 100% 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#humidityContainer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#humidityDisplay {
+    font-size: 2rem;
+    line-height:2;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+
+
+#windContainer {
+    margin-left: 2.5rem;
+    background-image: url(assets/windbg.png);
+    background-size: 100% 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#windContainer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#arrow {
+    transition: 1s ease-in-out;
+}
+
+#arrow img {
+    height: 4rem;
+    margin-bottom: .3rem;
+}
+
+
+
+
+
+/* RIGHT SIDE */
+#rightWrapper {
+    width: 30%;
+    background-image: url(assets/tempbg.png);
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+#unitBtn {
+    position: absolute;
+    background-image: url(assets/feelslikebg.png);
+    background-size: 100% 100%;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+#tempDisplay {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#feelsLike {
+    background-image: url(assets/feelslikebg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 2rem 3rem;
+    margin: 0 2rem;
+    color: white;
+    line-height:2;
+}
+
+/* comment */
+/* Test test test */

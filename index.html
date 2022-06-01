@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="fonts/sharetechmono/stylesheet.css">
+    <link rel="stylesheet" href="fonts/pixeled/stylesheet.css">
+    <link rel="stylesheet" href="app.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>IS IT WORTH GOING OUTSIDE TODAY?</h1>
+            <form>
+                <input type="text" placeholder="search location...">
+                <span id="formTip">*City name</span>
+            </form>
+        </header>
+
+        <main>
+            <div id="leftWrapper">
+                <div id="top">
+                    <div id="weatherIcon"></div>
+                    <p></p>
+                </div>
+                <div id="bottom">
+                    <div id="humidityContainer">
+                        <div>
+                            <span id="humidityDisplay"></span>
+                            <span>HUMIDITY</span>
+                        </div>
+                    </div>
+                    <div id="windContainer">
+                        <div>
+                            <div id="arrow">
+                                <img src="assets/windarrow.png">
+                            </div>
+                            <span id="windDisplay"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightWrapper">
+                <div id="unitBtn">F</div>
+                <span id="tempDisplay"></span>
+                <div id="feelsLike">
+                    <span></span>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="app.js"></script>
+</body>
+
+</html>
