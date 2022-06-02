@@ -1,7 +1,11 @@
+
+//* API-grejer
 const urlGeo = 'http://api.openweathermap.org/geo/1.0/direct?q=';
 const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?';
 const apiKey = 'f380121599977826ab769d5624051442';
+//* API-grejer
 
+//* DOM-selectors
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const h1 = document.querySelector('h1');
@@ -13,12 +17,15 @@ const feelsLike = document.querySelector('#feelsLike span');
 const icon = document.querySelector('#weatherIcon');
 const p = document.querySelector('#top p');
 const unitBtn = document.querySelector('#unitBtn');
+//* DOM-selectors
 
-let units = 'c';
+//* Globala variabler
 let exactTemp = 0;
 let feelsLikeTemp = 0;
+//* Globala variabler
 
-// Hämtar stadens koordinater med hjälp av inputen. 
+
+//* Hämtar stadens koordinater med hjälp av inputen. 
 const getCoords = async () => {
     const searchTerm = input.value;
     try {
@@ -35,6 +42,8 @@ const getCoords = async () => {
     }
 }
 
+
+//* Hämtar väderdata med hjälp av 
 const getWeatherData = async () => {
     const coords = await getCoords();
     const res = await axios.get(`${urlWeather}lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`);
@@ -42,6 +51,8 @@ const getWeatherData = async () => {
     return res.data;
 }
 
+
+//* Visar väderdata i DOM
 const displayWeatherData = async () => {
     const data = await getWeatherData();
     h1.textContent += `, ${data.sys.country.toUpperCase()}`;
@@ -54,7 +65,6 @@ const displayWeatherData = async () => {
     feelsLikeTemp = data.main.feels_like;
     temp.textContent = `${Math.floor(exactTemp)}°C`
     feelsLike.textContent = `FEELS LIKE ${Math.floor(feelsLikeTemp)}°C`;
-
 
     if (data.weather[0].main === 'Clear') {
         icon.style.backgroundImage = 'url(assets/sunny.png)';
@@ -71,7 +81,6 @@ const displayWeatherData = async () => {
     } else {
         icon.style.backgroundImage = 'url(assets/cloudy.png)';
         p.textContent = 'The weather is decent but not great. You should probably keep working on those Javascript skills instead.'
-
     }
 
     document.querySelector('main').style.opacity = 1;
@@ -79,10 +88,15 @@ const displayWeatherData = async () => {
 }
 
 
+//* Lyssnar efter submit event från sökrutan.
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     displayWeatherData();
 })
+
+
+//* Gör så att man kan ändra mellan Celsius och Fahrenheit
+let units = 'c';
 
 const makeF = () => {
     const f = Math.floor((exactTemp * 9 / 5) + 32);
@@ -106,3 +120,4 @@ unitBtn.addEventListener('click', () => {
         makeC();
     }
 })
+
